@@ -11,7 +11,7 @@
         <meta property="og:description" content="Wirf einen Blick auf die gesamte Karte des Weihnachtsservers, inklusive Markierungen für die wichtigsten Orte und beinahe alle Spieler!">
 
         <link rel="icon" type="image/webp" href="assets/fluentui-emoji/favicon.webp">
-        <meta property="og:image" content="https://lichtertal.pages.dev/assets/fluentui-emoji/favicon.webp">
+        <meta property="og:image" content="https://rfgm.lunofe.com/assets/fluentui-emoji/favicon.webp">
         <meta name="theme-color" content="#365083">
 
         <link rel="stylesheet" href="assets/css/leaflet.css">
@@ -156,12 +156,12 @@
                 // add layers and control
                 data.layers.forEach(layer => layer.addTo(map));
                 layer_toggle = data.layers[0].addTo(map);
-        
+
                 // update available days dropdown
                 document.getElementById('day').innerHTML = data.days.map(day =>
                     `<option value="${day}">${day}</option>`
                 ).join('');
-        
+
                 // apply
                 update_map_image();
             }
@@ -184,7 +184,7 @@
                 map.unproject([-896, -896], 0),
                 map.unproject([896, 896], 0)
             );
-            map.attributionControl.setPrefix("<a href='https://github.com/lunofe/refugium.me-weihnachtsserver-karte'>Quelloffen auf GitHub</a>");
+            map.attributionControl.setPrefix("<a href='https://github.com/lunofe/rfgm-xmas-map'>Quelloffen auf GitHub</a>");
             var map_image = L.imageOverlay("", bounds).addTo(map);
             var layer_toggle;
 
@@ -238,7 +238,6 @@
                 ));*/
             }
         </script>
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0242883189544fcaa90773e9d0e099ea"}'></script>
     </body>
 
 </html>
