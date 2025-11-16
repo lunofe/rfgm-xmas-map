@@ -121,6 +121,51 @@ function kurve(color, coords, dashes, weight = 4) {
 // first run
 map_data_switch();
 
+// replay functionality
+const replay = {
+    interval: null,
+    timeout: null,
+    toggle() {
+        const year_select = document.getElementById('year');
+        const day_select = document.getElementById('day');
+        const button = document.querySelector('#replay');
+        // stop if active
+        if (this.interval || this.timeout) {
+            clearInterval(this.interval);
+            clearTimeout(this.timeout);
+            this.interval = this.timeout = null;
+            day_select.disabled = year_select.disabled = false;
+            button.textContent = '🔁';
+            day_select.selectedIndex = 0;
+            update_map_image();
+            return;
+        }
+        // start replay
+        button.textContent = '⏹️';
+        day_select.disabled = year_select.disabled = true;
+        const days = years[year_select.value].days;
+        let index = days.length - 1;
+        const tick = () => {
+            if (index >= 0) {
+                day_select.selectedIndex = index--;
+                update_map_image();
+            } else {
+                clearInterval(this.interval);
+                this.interval = null;
+                this.timeout = setTimeout(() => {
+                    index = days.length - 1;
+                    this.timeout = null;
+                    this.interval = setInterval(tick, 500);
+                }, 3000);
+            }
+        };
+        tick();
+        this.interval = setInterval(tick, 500);
+    }
+};
+
+function toggle_replay() { replay.toggle(); }
+
 // devtools
 if (window.location.href.includes("file://")) {
     map.getContainer().style.cursor = 'crosshair';

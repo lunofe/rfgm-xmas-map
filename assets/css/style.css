@@ -42,4 +42,11 @@ html {
     top: 10px;
     right: 10px;
     z-index: 2;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#replay {
+    cursor: pointer;
 }
