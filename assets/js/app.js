@@ -1,3 +1,6 @@
+// set global default position for Leaflet layer controls
+L.Control.Layers.prototype.options.position = 'topleft';
+
 // define dates
 const years = {
     "2024": {
@@ -93,7 +96,8 @@ var map = L.map("map", {
     wheelPxPerZoomLevel: 100,
     minZoom: -2,
     maxZoom: 2,
-    maxBounds: [[-1500, -1500], [1500, 1500]]
+    maxBounds: [[-1500, -1500], [1500, 1500]],
+    zoomControl: false
 }).setView([0, 0], -1);
 var bounds = new L.LatLngBounds(
     map.unproject([-896, -896], 0),
