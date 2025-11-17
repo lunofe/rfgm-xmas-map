@@ -1,6 +1,3 @@
-// set global default position for Leaflet layer controls
-L.Control.Layers.prototype.options.position = 'topleft';
-
 // define dates
 const years = {
     "2024": {
