@@ -105,7 +105,7 @@ const search = {
                 const marker = this.markers.find(m =>
                     m.position.lat == item.dataset.lat && m.position.lng == item.dataset.lng
                 );
-                if (marker) setTimeout(() => marker.layer.openPopup(), 500);
+                if (marker) setTimeout(() => marker.layer.openPopup(), 1000);
                 results.classList.remove('visible');
                 document.getElementById('search_input').value = '';
             };
