@@ -57,6 +57,80 @@ const years = {
     }
 };
 
+// search functionality
+const search = {
+    markers: [],
+    collect_markers() {
+        this.markers = [];
+        const layers = years[document.getElementById('year').value].layers;
+        layers.forEach((layer_group, i) => {
+            if (i === 0) return; // Skip control layer
+            // Get category name from control layer
+            let category = 'Unbekannt';
+            if (layers[0]._layers) {
+                for (let key in layers[0]._layers) {
+                    if (layers[0]._layers[key].layer === layer_group) {
+                        category = layers[0]._layers[key].name || 'Unbekannt';
+                        break;
+                    }
+                }
+            }
+            layer_group.eachLayer(layer => {
+                if (layer instanceof L.Marker && layer.getPopup()) {
+                    this.markers.push({
+                        name: layer.getPopup().getContent(),
+                        layer: layer,
+                        position: layer.getLatLng(),
+                        category: category
+                    });
+                }
+            });
+        });
+    },
+    perform_search(query) {
+        const results = document.getElementById('search_results');
+        const filtered = query.trim()
+            ? this.markers.filter(m => m.name.toLowerCase().replace(/<[^>]*>/g, ' ').includes(query.toLowerCase()))
+            : this.markers;
+        results.innerHTML = filtered.length ? filtered.map(r => `
+            <div class="search_result_item" data-lat="${r.position.lat}" data-lng="${r.position.lng}">
+                <div class="search_result_name">${r.name.replace(/<br>/g, ' ')}</div>
+                <div class="search_result_category">${r.category}</div>
+            </div>
+        `).join('') : '<div class="search_no_results">Keine Ergebnisse gefunden</div>';
+        results.classList.add('visible');
+        results.querySelectorAll('.search_result_item').forEach(item => {
+            item.onclick = () => {
+                map.flyTo([item.dataset.lat, item.dataset.lng], 2, { duration: 1 });
+                const marker = this.markers.find(m =>
+                    m.position.lat == item.dataset.lat && m.position.lng == item.dataset.lng
+                );
+                if (marker) setTimeout(() => marker.layer.openPopup(), 500);
+                results.classList.remove('visible');
+                document.getElementById('search_input').value = '';
+            };
+        });
+    },
+    init() {
+        const input = document.getElementById('search_input');
+        const update_width = () => requestAnimationFrame(() => {
+            const w = document.querySelector('#control > :first-child').offsetWidth + 'px';
+            input.style.width = w;
+            document.getElementById('search_results').style.width = w;
+        });
+        update_width();
+        input.addEventListener('input', e => this.perform_search(e.target.value));
+        input.addEventListener('focus', () => this.perform_search(input.value));
+        document.addEventListener('click', e => {
+            if (!document.getElementById('control').contains(e.target)) {
+                document.getElementById('search_results').classList.remove('visible');
+            }
+        });
+        this.collect_markers();
+    }
+};
+search.init();
+
 function map_data_switch() {
     // clear previous control and layers
     if (layer_toggle) map.removeControl(layer_toggle);
@@ -72,6 +146,8 @@ function map_data_switch() {
     ).join('');
     // apply
     update_map_image();
+    search.collect_markers();
+    document.getElementById('search_results').classList.remove('visible');
 }
 
 // update map image

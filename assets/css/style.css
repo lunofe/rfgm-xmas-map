@@ -53,3 +53,47 @@ html {
 #replay {
     cursor: pointer;
 }
+
+#search_input,
+#search_results {
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#search_results {
+    background: white;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+#search_results.visible {
+    display: block;
+}
+.search_result_item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+    border-radius: 5px;
+}
+.search_result_item:last-child {
+    border-bottom: none;
+}
+.search_result_item:hover {
+    background-color: #f0f0f0;
+}
+.search_result_name {
+    font-weight: 600;
+    word-wrap: break-word;
+}
+.search_result_category {
+    color: gray;
+    margin-top: 5px;
+}
+.search_no_results {
+    padding: 10px;
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
