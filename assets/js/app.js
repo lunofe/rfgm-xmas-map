@@ -59,24 +59,17 @@ const years = {
 
 function map_data_switch() {
     // clear previous control and layers
-    if (layer_toggle) { map.removeControl(layer_toggle); }
-    map.eachLayer(layer => {
-        if (layer !== map_image) {
-            map.removeLayer(layer);
-        }
-    });
-
+    if (layer_toggle) map.removeControl(layer_toggle);
+    map.eachLayer(layer => { if (layer !== map_image) map.removeLayer(layer); });
     // get user input
     const data = years[document.getElementById('year').value];
     // add layers and control
     data.layers.forEach(layer => layer.addTo(map));
     layer_toggle = data.layers[0].addTo(map);
-
     // update available days dropdown
     document.getElementById('day').innerHTML = data.days.map(day =>
         `<option value="${day}">${day}</option>`
     ).join('');
-
     // apply
     update_map_image();
 }
@@ -160,7 +153,6 @@ const replay = {
         this.interval = setInterval(tick, 500);
     }
 };
-
 function toggle_replay() { replay.toggle(); }
 
 // devtools
