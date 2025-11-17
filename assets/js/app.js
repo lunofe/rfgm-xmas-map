@@ -121,6 +121,12 @@ const search = {
         update_width();
         input.addEventListener('input', e => this.perform_search(e.target.value));
         input.addEventListener('focus', () => this.perform_search(input.value));
+        input.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+                const first_result = document.querySelector('.search_result_item');
+                if (first_result) first_result.click();
+            }
+        });
         document.addEventListener('click', e => {
             if (!document.getElementById('control').contains(e.target)) {
                 document.getElementById('search_results').classList.remove('visible');
