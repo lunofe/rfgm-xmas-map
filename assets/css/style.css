@@ -63,7 +63,7 @@ html {
 }
 #search_results {
     background: white;
-    max-height: 300px;
+    max-height: 40vh;
     overflow-y: auto;
     display: none;
 }
@@ -90,6 +90,7 @@ html {
 .search_result_category {
     color: gray;
     margin-top: 5px;
+    font-size: smaller;
 }
 .search_no_results {
     padding: 10px;
