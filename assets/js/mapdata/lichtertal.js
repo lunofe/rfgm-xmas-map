@@ -2,6 +2,7 @@ function lichtertal_layers() {
 
     var lichtertal_wichtige_orte = L.layerGroup([
         marker([63,-77], "Spawn", "spawn"),
+        marker([44,-91], "Farmwelt", "farmwelt"),
         marker([24,-69], "Rathaus", "rathaus"),
         marker([42,-70], "RefSport", "shop"),
         marker([48,-43], "Adventskalender", "weihnachtsbaum"),
@@ -20,8 +21,6 @@ function lichtertal_layers() {
         marker([82,-51], "LyphBot's Holzkisten", "shop"),
         marker([59,-36], "Myronis Plätzchen & Glühwein", "shop"),
 
-        marker([44,-91], "Farmwelt", "farmwelt"),
-
         marker([-214,-119], "Kirche zum heiligen Wasserfall", "kirche"),
 
         marker([121,29], "Detektei K&E", "detektei"),
@@ -30,8 +29,8 @@ function lichtertal_layers() {
         marker([79,114], "Café Winterglanz", "cafe"),
         marker([-41,14], "Café Röstwerk", "cafe"),
 
-        marker([50,-104], "Skilift »Waldlift«", "gondel"),
-        marker([50,-321], "Skilift »Waldlift«", "gondel"),
+        marker([50,-104], "Skilift »Waldlift« (Talstation)", "gondel"),
+        marker([50,-321], "Skilift »Waldlift« (Bergstation)", "gondel"),
         marker([387,108], "Nordbahnhof", "zug"),
         marker([85,-270], "Westbahnhof", "zug"),
         marker([-205,-136], "Südwestbahnhof", "zug"),
@@ -191,36 +190,36 @@ function lichtertal_layers() {
         linie("#FFFD6B", [[50,-104],[50,-321]]),
 
         // Steigberger Schlucht
-        marker([59,-310], "Steigberger Schlucht", "schlitten"),
+        marker([59,-310], "Steigberger Schlucht (Start)", "schlitten"),
         kurve("#82F96A", [[61,-309],[78,-305],[96,-313],[102,-305],[104,-290]], "5,10", "3"),
         kurve("#82F96A", [[104,-290],[109,-277],[116,-266],[112,-259],[102,-264],[93,-277],[84,-280]], "", "2"),
         kurve("#64CF4B", [[84,-280],[66,-285],[50,-285]], "5,10", "3"),
         kurve("#45A52B", [[50,-285],[38,-281],[30,-267],[40,-257],[67,-258],[92,-256],[105,-243],[114,-230],[128,-221],[141,-216],[150,-199],[157,-177],[162,-156],[162,-140],[155,-121],[146,-110],[137,-98],[133,-83],[133,-69]], "", "2"),
-        marker([133,-69], "Steigberger Schlucht", "ziel"),
+        marker([133,-69], "Steigberger Schlucht (Ziel)", "ziel"),
 
         // Lichtertal Südabfahrt
-        marker([38,-310], "Lichtertal Südabfahrt", "schlitten"),
+        marker([38,-310], "Lichtertal Südabfahrt (Start)", "schlitten"),
         kurve("#4B5EF9", [[38,-310],[32,-328],[42,-348],[57,-364],[65,-371],[66,-378],[58,-380],[38,-369],[16,-358],[7,-345],[6,-338]], "", "2"),
         kurve("#4B5EF9", [[6,-338],[13,-309],[28,-277],[35,-259],[35,-250]], "5,10", "3"),
         kurve("#4B5EF9", [[35,-250],[33,-237],[26,-218],[37,-198],[45,-178],[46,-158],[55,-144],[69,-132],[78,-113],[82,-95]], "", "2"),
-        marker([82,-95], "Lichtertal Südabfahrt", "ziel"),
+        marker([82,-95], "Lichtertal Südabfahrt (Ziel)", "ziel"),
 
         // Refmayr Piste
-        marker([14,-319], "Refmayr Piste", "schlitten"),
+        marker([14,-319], "Refmayr Piste (Start)", "schlitten"),
         kurve("#C9412B", [[14,-319],[58,-359],[67,-367],[72,-375],[79,-381],[88,-382],[99,-387],[112,-395],[126,-403],[134,-409],[143,-410]], "", "2"),
         kurve("#C9412B", [[143,-410],[171,-398],[200,-396]], "5,10", "3"),
         kurve("#C9412B", [[200,-396],[208,-390],[216,-378],[227,-367],[240,-353],[246,-334],[244,-317],[242,-305],[245,-297],[255,-287],[283,-261],[315,-227],[345,-200],[362,-168],[370,-134],[371,-107],[366,-89],[352,-80],[341,-79],[334,-76],[327,-69],[316,-64],[307,-62]], "", "2"),
         linie("#C9412B", [[307,-62],[301,-60]], "5,10", "3"),
         kurve("#C9412B", [[301,-60],[288,-53],[278,-43],[261,-38],[237,-40],[187,-53]], "", "2"),
-        marker([187,-53], "Refmayr Piste", "ziel"),
+        marker([187,-53], "Refmayr Piste (Ziel)", "ziel"),
 
         // Geheime Piste
-        marker([28,-311], "Geheime Piste", "schlitten"),
+        marker([28,-311], "Geheime Piste (Start)", "schlitten"),
         kurve("#000000", [[28,-311],[30,-328],[60,-357],[69,-365],[74,-373],[81,-379],[90,-380],[101,-385],[114,-393],[128,-401],[136,-407],[143,-408]], "", "2"),
         kurve("#000000", [[143,-408],[173,-396],[200,-394]], "5,10", "3"),
         kurve("#000000", [[198,-394],[206,-388],[214,-376],[225,-365],[238,-351],[244,-332],[231,-316],[223,-312]], "", "2"),
         kurve("#000000", [[223,-312],[207,-312],[193,-305],[184,-295],[172,-291],[157,-295],[150,-314],[156,-327],[167,-327],[179,-312],[185,-287],[178,-269],[183,-249],[187,-234],[182,-216],[188,-188],[194,-164],[185,-148],[184,-130],[169,-112],[167,-105],[163,-100]], "5,10", "3"),
-        marker([163,-100], "Geheime Piste", "ziel"),
+        marker([163,-100], "Geheime Piste (Ziel)", "ziel"),
 
         // Weg zum Westbahnhof
         kurve("#9E2AA5", [[65,-101],[77,-129],[72,-142]], "1,10", "6"),

@@ -3,30 +3,29 @@ function tannberg_layers() {
     var tannberg_wichtige_orte = L.layerGroup([
         marker([-150,-400], "Spawn", "spawn"),
         marker([-141,-412], "Farmwelt", "farmwelt"),
-        marker([-132,-405], "Bahnhof Tannenwald", "zug"),
-
-        marker([-212,-367], "Nordkreuzplatz", "weihnachtsbaum"),
+        marker([-381,-37], "Rathaus", "rathaus"),
+        marker([-373,-44], "RefSport", "shop"),
+        marker([-401,-144], "Adventskalender", "weihnachtsbaum"),
         marker([-390,-222], "Gemeindezentrum", "rathaus"),
+        marker([-212,-367], "Nordkreuzplatz", "weihnachtsbaum"),
+
+        marker([-417,-103], "Hutladen", "shop"),
+        marker([-418,-131], "Luki's Kellogsstube", "shop"),
+        marker([-396,-96], "Models & More", "shop"),
+
         marker([-300,-291], "Detektei K&E", "detektei"),
         marker([-342,-270], "Phil's Hofladen", "shop"),
         marker([-147,-266], "Modde's Partykeller", "bowling"),
         marker([-333,-143], "Pferdeverkauf", "shop"),
 
+        marker([-471,-530], "Fuchsspitze", "berg"),
+        marker([-457,-427], "Seilbahn (Bergstation)", "gondel"),
+        marker([-457,-120], "Seilbahn (Talstation)", "gondel"),
+        marker([-132,-405], "Bahnhof Tannenwald", "zug"),
         marker([34,-80], "Nordbahnhof", "zug"),
         marker([-24,-241], "Haltepunkt Oberdorf", "zug"),
         marker([-453,-100], "Ostbahnhof", "zug"),
         marker([-280,-565], "Westbahnhof", "zug"),
-
-        marker([-471,-530], "Fuchsspitze", "berg"),
-        marker([-457,-427], "Gondelstation", "gondel"),
-        marker([-457,-120], "Gondelstation", "gondel"),
-
-        marker([-401,-144], "Adventskalender", "weihnachtsbaum"),
-        marker([-417,-103], "Hutladen", "shop"),
-        marker([-418,-131], "Luki's Kellogsstube", "shop"),
-        marker([-396,-96], "Models & More", "shop"),
-        marker([-373,-44], "RefSport", "shop"),
-        marker([-381,-37], "Rathaus", "rathaus")
     ]);
 
     var tannberg_spieler = L.layerGroup([
@@ -105,10 +104,12 @@ function tannberg_layers() {
         // Gondel
         linie("#BC3220", [[-457,-427],[-457,-120]], "1,5"),
         // Schlitten
-        marker([-482,-427], "Strecke Gipfelmulde", "schlitten"),
+        marker([-482,-427], "Strecke Gipfelmulde (Start)", "schlitten"),
         kurve("#43BCBA", [[-482,-427],[-499,-388],[-522,-372],[-546,-343],[-573,-326],[-596,-295],[-581,-279],[-563,-279],[-518,-299],[-495,-297],[-460,-250],[-457,-220],[-448,-200],[-427,-180]]).bindPopup("Strecke Gipfelmulde"),
-        marker([-486,-432], "Strecke Fuchsloch", "schlitten"),
-        kurve("#F4A300", [[-486,-432],[-502,-404],[-528,-397],[-552,-390],[-576,-360],[-599,-339],[-600,-295],[-585,-275],[-563,-267],[-557,-252],[-574,-241],[-607,-201],[-607,-182],[-627,-150],[-662,-152],[-667,-135],[-666,-115],[-646,-91],[-627,-69],[-615,-70],[-589,-94],[-562,-105],[-551,-131],[-531,-170],[-518,-190],[-462,-205],[-452,-200],[-432,-177]]).bindPopup("Strecke Fuchsloch"),
+        marker([-427,-180], "Strecke Gipfelmulde (Ziel)", "ziel"),
+        marker([-486,-432], "Strecke Fuchsloch (Start)", "schlitten"),
+        kurve("#F4A300", [[-486,-432],[-502,-404],[-528,-397],[-552,-390],[-576,-360],[-599,-339],[-600,-295],[-585,-275],[-563,-267],[-557,-252],[-574,-241],[-607,-201],[-607,-182],[-627,-150],[-662,-152],[-667,-135],[-666,-115],[-646,-91],[-627,-69],[-615,-70],[-589,-94],[-562,-105],[-551,-131],[-531,-170],[-518,-190],[-462,-205],[-432,-177]]).bindPopup("Strecke Fuchsloch"),
+        marker([-432,-177], "Strecke Fuchsloch (Ziel)", "ziel"),
         // BBC
         linie("#365083", [[-275,101],[-275,342]], "1,5"),
         // Zugtunnel
