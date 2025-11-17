@@ -81,7 +81,8 @@ const search = {
                         name: layer.getPopup().getContent(),
                         layer: layer,
                         position: layer.getLatLng(),
-                        category: category
+                        category: category,
+                        icon: layer.options.icon.options.iconUrl
                     });
                 }
             });
@@ -94,8 +95,11 @@ const search = {
             : this.markers;
         results.innerHTML = filtered.length ? filtered.map(r => `
             <div class="search_result_item" data-lat="${r.position.lat}" data-lng="${r.position.lng}">
+                <img src="${r.icon}" class="search_result_icon" />
+                <div class="search_result_text">
                 <div class="search_result_name">${r.name.replace(/<br>/g, ' ')}</div>
                 <div class="search_result_category">${r.category}</div>
+                </div>
             </div>
         `).join('') : '<div class="search_no_results">Keine Ergebnisse gefunden</div>';
         results.classList.add('visible');

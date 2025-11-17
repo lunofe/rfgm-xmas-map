@@ -76,12 +76,18 @@ html {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s;
     border-radius: 5px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
 }
 .search_result_item:last-child {
     border-bottom: none;
 }
 .search_result_item:hover {
     background-color: #f0f0f0;
+}
+.search_result_icon {
+    max-height: 4vh;
 }
 .search_result_name {
     font-weight: 600;
