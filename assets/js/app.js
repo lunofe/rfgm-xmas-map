@@ -144,7 +144,7 @@ search.init();
 function map_data_switch() {
     // clear previous control and layers
     if (layer_toggle) map.removeControl(layer_toggle);
-    map.eachLayer(layer => { if (layer !== map_image) map.removeLayer(layer); });
+    map.eachLayer(layer => { if (!(layer instanceof L.ImageOverlay)) map.removeLayer(layer); });
     // get user input
     const data = years[document.getElementById('year').value];
     // add layers and control
@@ -269,6 +269,12 @@ if (window.location.href.includes("file://")) {
         console.log(JSON.stringify(dev_kurve_coords));
     });
     document.querySelector('.leaflet-image-layer').style.border = '1px dashed #ffffff55';
+    /*// test image
+    var test_bounds = new L.LatLngBounds(
+        map.unproject([-500, -500], 0),
+        map.unproject([500, 500], 0)
+    );
+    var image_test = L.imageOverlay("assets/map/test.webp", test_bounds).addTo(map);*/
     /*// map size
     map.setMaxBounds([[-1500, -1500], [1500, 1500]]);
     map_image.setBounds(new L.LatLngBounds(
