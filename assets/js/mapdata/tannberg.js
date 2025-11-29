@@ -19,11 +19,11 @@ const tannberg_wichtige_orte = L.layerGroup([
         marker([-471,-530], "Fuchsspitze", "berg"),
         marker([-457,-427], "Seilbahn (Bergstation)", "gondel"),
         marker([-457,-120], "Seilbahn (Talstation)", "gondel"),
-        marker([-132,-405], "Bahnhof Tannenwald", "zug"),
-        marker([34,-80], "Nordbahnhof", "zug"),
-        marker([-24,-241], "Haltepunkt Oberdorf", "zug"),
-        marker([-453,-100], "Ostbahnhof", "zug"),
-        marker([-280,-565], "Westbahnhof", "zug"),
+        marker([-132,-405], "Bahnhof Tannenwald", "station"),
+        marker([34,-80], "Nordbahnhof", "station"),
+        marker([-24,-241], "Haltepunkt Oberdorf", "station"),
+        marker([-453,-100], "Ostbahnhof", "station"),
+        marker([-280,-565], "Westbahnhof", "station"),
     ]);
 
 const tannberg_spieler = L.layerGroup([

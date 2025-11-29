@@ -7,7 +7,7 @@ if (window.location.href.includes("file://")) {
     map.on('click', function (e) {
         navigator.clipboard.writeText('[' + Math.round(e.latlng.lat) + ',' + Math.round(e.latlng.lng) + ']');
     });
-    var dev_linie_handle = L.marker([0, 0], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true, isDevtool: true }).addTo(map);
+    var dev_linie_handle = L.marker([0, 0], { icon: L.icon({ iconUrl: "assets/emoji/pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true, isDevtool: true }).addTo(map);
     var dev_linie_coords = [];
     var dev_linie_polygon = L.polygon(dev_linie_coords, { color: "#fff000", isDevtool: true }).addTo(map);
     dev_linie_handle.on('dragend', function (e) {
@@ -16,7 +16,7 @@ if (window.location.href.includes("file://")) {
         dev_linie_polygon.setLatLngs(dev_linie_coords);
         console.log(JSON.stringify(dev_linie_coords));
     });
-    var dev_kurve_handle = L.marker([0, 100], { icon: L.icon({ iconUrl: "assets/fluentui-emoji/alt_pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true, isDevtool: true }).addTo(map);
+    var dev_kurve_handle = L.marker([0, 100], { icon: L.icon({ iconUrl: "assets/emoji/alt_pushpin.webp", iconSize: [44, 44], iconAnchor: [3, 40] }), draggable: true, isDevtool: true }).addTo(map);
     var dev_kurve_coords = [];
     var dev_kurve_polygon = L.polygon(dev_kurve_coords, { color: "#ff00bb", isDevtool: true }).addTo(map);
     dev_kurve_handle.on('dragend', function (e) {
@@ -33,12 +33,12 @@ if (window.location.href.includes("file://")) {
         { isDevtool: true }
     ).addTo(map);
     var test_handle_1 = L.marker([-500, -500], {
-        icon: L.icon({ iconUrl: "assets/fluentui-emoji/pin.webp", iconSize: [22, 22], iconAnchor: [11, 21] }),
+        icon: L.icon({ iconUrl: "assets/emoji/pin.webp", iconSize: [22, 22], iconAnchor: [11, 21] }),
         draggable: true,
         isDevtool: true
     }).addTo(map);
     var test_handle_2 = L.marker([500, 500], {
-        icon: L.icon({ iconUrl: "assets/fluentui-emoji/pin.webp", iconSize: [22, 22], iconAnchor: [11, 21] }),
+        icon: L.icon({ iconUrl: "assets/emoji/pin.webp", iconSize: [22, 22], iconAnchor: [11, 21] }),
         draggable: true,
         isDevtool: true
     }).addTo(map);

@@ -29,11 +29,11 @@ const lichtertal_wichtige_orte = L.layerGroup([
 
         marker([50,-104], "Skilift »Waldlift« (Talstation)", "gondel"),
         marker([50,-321], "Skilift »Waldlift« (Bergstation)", "gondel"),
-        marker([387,108], "Nordbahnhof", "zug"),
-        marker([85,-270], "Westbahnhof", "zug"),
-        marker([-205,-136], "Südwestbahnhof", "zug"),
-        marker([-300,224], "Südbahnhof", "zug"),
-        marker([7,442], "Ostbahnhof", "zug"),
+        marker([387,108], "Nordbahnhof", "station"),
+        marker([85,-270], "Westbahnhof", "station"),
+        marker([-205,-136], "Südwestbahnhof", "station"),
+        marker([-300,224], "Südbahnhof", "station"),
+        marker([7,442], "Ostbahnhof", "station"),
     ]);
 
 const lichtertal_spieler = L.layerGroup([
