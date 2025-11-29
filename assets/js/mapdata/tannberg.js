@@ -1,6 +1,4 @@
-function tannberg_layers() {
-
-    var tannberg_wichtige_orte = L.layerGroup([
+const tannberg_wichtige_orte = L.layerGroup([
         marker([-150,-400], "Spawn", "spawn"),
         marker([-141,-412], "Farmwelt", "farmwelt"),
         marker([-381,-37], "Rathaus", "rathaus"),
@@ -28,7 +26,7 @@ function tannberg_layers() {
         marker([-280,-565], "Westbahnhof", "zug"),
     ]);
 
-    var tannberg_spieler = L.layerGroup([
+const tannberg_spieler = L.layerGroup([
         marker([-241,-369], "lunofe"),
         marker([-253,-351], "zeitspiel"),
         marker([-237,-400], "Choco & JuleMC"),
@@ -100,7 +98,7 @@ function tannberg_layers() {
         marker([-275,379], "Beautiful Botte Clan")
     ]);
 
-    var tannberg_strecken = L.layerGroup([
+const tannberg_strecken = L.layerGroup([
         // Gondel
         linie("#BC3220", [[-457,-427],[-457,-120]], "1,5"),
         // Schlitten
@@ -121,10 +119,25 @@ function tannberg_layers() {
         kurve("black", [[-448,-101],[-470,-101],[-476,-104],[-481,-107]], "1,5")
     ]);
 
-    return [
+const tannberg = {
+    days: [
+        "31.12.",
+        "23.12.",
+        "19.12.",
+        "17.12.",
+        "14.12.",
+        "09.12.",
+        "07.12.",
+        "06.12.",
+        "05.12.",
+        "04.12.",
+        "03.12."
+    ],
+    layers: [
         L.control.layers(null, { "Wichtige Orte": tannberg_wichtige_orte, "Spieler": tannberg_spieler, "Strecken": tannberg_strecken }),
         tannberg_wichtige_orte,
         tannberg_spieler,
         tannberg_strecken
-    ];
-}
+    ],
+    mapSize: 1792
+};

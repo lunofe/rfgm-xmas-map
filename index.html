@@ -39,12 +39,23 @@
         <script src="assets/js/leaflet.js"></script>
         <script src="assets/js/turf.js"></script>
 
+        <!-- utils (must load before mapdata) -->
+        <script src="assets/js/utils.js"></script>
+
         <!-- map data -->
         <script src="assets/js/mapdata/tannberg.js"></script>
         <script src="assets/js/mapdata/lichtertal.js"></script>
 
         <!-- main logic -->
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/map-setup.js"></script>
+        <script src="assets/js/search.js"></script>
+        <script src="assets/js/map-switch.js"></script>
+
+        <!-- initialize -->
+        <script>map_data_switch();</script>
+
+        <!-- devtools (must load after map_data_switch) -->
+        <script src="assets/js/devtools.js"></script>
     </body>
 
 </html>
