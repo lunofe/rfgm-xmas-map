@@ -24,12 +24,13 @@
         <div id="map"></div>
         <div id="control">
             <div>
-            <span id="replay" onclick="toggle_replay()">🔁</span>
-            <select onchange="update_map_image()" id="day"></select>
-            <select onchange="map_data_switch()" id="year">
-                <option value="2024">2024 (Lichtertal)</option>
-                <option value="2023">2023 (Tannberg)</option>
-            </select>
+                <span id="replay" onclick="toggle_replay()">🔁</span>
+                <select onchange="update_map_image()" id="day"></select>
+                <select onchange="map_data_switch()" id="year">
+                    <option value="2025">2025 (Gipfelbach)</option>
+                    <option value="2024">2024 (Lichtertal)</option>
+                    <option value="2023">2023 (Tannberg)</option>
+                </select>
             </div>
             <input type="text" id="search_input" placeholder="Suche nach Orten und Spielern..." />
             <div id="search_results"></div>
@@ -43,6 +44,7 @@
         <script src="assets/js/utils.js"></script>
 
         <!-- map data -->
+        <script src="assets/js/mapdata/gipfelbach.js"></script>
         <script src="assets/js/mapdata/tannberg.js"></script>
         <script src="assets/js/mapdata/lichtertal.js"></script>
 

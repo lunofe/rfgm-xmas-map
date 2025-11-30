@@ -1,5 +1,6 @@
 // define years
 const years = {
+    "2025": gipfelbach,
     "2024": lichtertal,
     "2023": tannberg
 };

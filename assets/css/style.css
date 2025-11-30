@@ -18,6 +18,7 @@ html {
 
 .leaflet-image-layer {
     image-rendering: pixelated;
+    filter: brightness(0.8);
 }
 
 .leaflet-marker-pane,
