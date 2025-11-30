@@ -15,7 +15,7 @@ const gipfelbach_wichtige_orte = L.layerGroup([
     marker([133,679], "Ostgrat", "berg")
 ]);
 
-const gipfelbach_spieler = L.layerGroup([
+const gipfelbach_grundstücke = L.layerGroup([
     marker([18,-63], "lunofe,<br>fayetheg4y")
 ]);
 
@@ -85,7 +85,7 @@ const gipfelbach = {
     layers: [
         L.control.layers(null, {
             "Wichtige Orte": gipfelbach_wichtige_orte,
-            "Spieler": gipfelbach_spieler,
+            "Spielergründstücke": gipfelbach_grundstücke,
             "Tram": gipfelbach_tram,
             "Regionalbahn": gipfelbach_regionalbahn,
             "Zahnradbahn": gipfelbach_zahnradbahn,
@@ -93,7 +93,7 @@ const gipfelbach = {
             "Schlittenstrecke": gipfelbach_schlittenstrecke
         }),
         gipfelbach_wichtige_orte,
-        gipfelbach_spieler,
+        gipfelbach_grundstücke,
         gipfelbach_tram,
         gipfelbach_regionalbahn,
         gipfelbach_zahnradbahn,
