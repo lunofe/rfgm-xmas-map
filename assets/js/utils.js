@@ -8,3 +8,6 @@ function linie(color, coords, dashes, weight = 4) {
 function kurve(color, coords, dashes, weight = 4) {
     return L.polyline(turf.bezierSpline(turf.lineString(coords)).geometry.coordinates, { color: color, dashArray: dashes, weight: weight });
 }
+function blob(color, coords) {
+    return L.polygon(turf.bezierSpline(turf.lineString(coords)).geometry.coordinates, { stroke: true, fill: true, fillColor: color, fillOpacity: 0.1 });
+}
